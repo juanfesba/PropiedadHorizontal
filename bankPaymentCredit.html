@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<script>
+function url(){
+    var start=document.URL.length;
+    var user=document.URL.substring(54,start);
+    document.getElementById('IDResident').value = user;
+  //  window.alert(user);
+    return user;
+}
+</script>
+
+
+
+<title>Pago por banco</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../lib/w3.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom:20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.input2[type=input2]{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom:20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+h2 {
+  color:black;
+  text-shadow: 2px 2px 4px grey;
+  margin: 0 auto;
+  display: block;
+  font-weight: bold;
+  font-size: 50px;
+  width: 100%;
+}
+button {
+    color: white;
+    padding: 14px 20px;
+    margin: 0 auto;
+    border: 4px;
+    margin-bottom:8px;
+    cursor: pointer;
+    display: block;
+    width: 50%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+label {
+  text-align: justify;
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.button2 {background-color: #4CAF50;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */ 
+
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+
+.imgcontainer {
+    text-align: center;
+    margin-top: 15px;
+}
+
+img.avatar {
+    width: 40%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 8px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-light-grey w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-pale-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a onclick="window.location.href='principal.html'" class="w3-bar-item w3-button w3-padding-large w3-white">Principal</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">FAQ</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Info</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Principal</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Info</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-pale-grey w3-center" style="padding:65px 10px">
+  <p><h2>Pagar por medio de tarjeta de crédito</h2>
+</header>
+  <div class="w3-container w3-white w3-center">
+    <!--<label>Usuario</label>
+    <input id="usuario" type="text" placeholder="Ingresar usuario" name="usern" required>
+    <label>Contraseña</label>
+    <input type="text" placeholder="Ingresar contraseña" name="psw" required>
+    <button onclick="IntentoIngreso()" type="button" class="button2">INGRESAR</button>-->
+
+    <form action="checkbank.php" method="post">  
+    <label>ID del residente que está pagando*</label>
+    <input id="IDResident" type="text" onclick="url()" placeholder="Ej: 123" name="IDResident" required>    
+    <label>ID de lo que se pagará *</label>
+    <input id="IDPayment" type="text" pattern="[0-9]{1,}" placeholder="Ej: 123" name="IDPayment" required>
+    <label>Nombre en la tarjeta *</label>
+    <input id="cardname" type="text" pattern="[A-Z].{1,}" placeholder="Ej: MARIA CARRERO" name="cardname" required>
+    <label>Documento de identificación *</label>
+    <input id="iddoc" type="text" pattern="[0-9]{5,}" placeholder="Ej: 1153433465" name="iddoc" required>
+    <label>Número de tarjeta *</label>
+    <input id="cardnumber" type="text" pattern="[0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{4}" placeholder="4000 1234 5678 9010" name="cardnumber" required>
+    <label>Código de seguridad *</label>
+    <input id="seccode" type="text" pattern="[0-9]{3}" placeholder="000" name="seccode" required>
+    <label>Fecha de vencimiento *</label>
+    <input id="cmonth" type="text" pattern="[0-9]{2}" placeholder="MM" name="cmonth" required> 
+    <input id="cyear" type="text" pattern="[0-9]{4}" placeholder="YYYY"  name="cyear" required>  
+    <label>Cuotas *</label>
+    <input id="cuotas" type="text" placeholder="1 - 99" pattern= "[0-9]{1,2}" name="cuotas" required> 
+    <label>Telefono Celular *</label>
+    <input id="phonenumber"  type="text" placeholder="Ej: 3112222222" pattern= "[0-9]{10}" name="phonenumber" required> 
+    <label>Dirección de facturación *</label><p>
+    <input id="fact" type="text" placeholder="Ej: Calle 23 #110-120"  name="fact" required>
+    <input id="info" type="text" placeholder="Ej:Interior 3, Apt 401"  name="info" required> 
+    <label>Ciudad y País *</label><p>
+    <input id="city" type="text" placeholder="Ej: Cali"  name="city" required>
+    <input id="country" type="text" placeholder="Ej: Colombia" name="country" required><p>
+    <button id="input" type="text" class="button2">PAGAR</button>
+    </form>
+
+    <button onclick="window.location.href='opciones.html?data='+url()" type="button" class="button3" background-color: #f44336;}>CANCELAR</button>
+ 
+    <!--<button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">INGRESAR</button> -->
+  </div>
+
+</body>
+</html>
