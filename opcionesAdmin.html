@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--Descripción: este módulo es el menú de opciones del administrador de la unidad, donde el administrador escoge a que otro módulo quiere entrar, tales como: 
+PUBLICAR ENCUESTA, PUBLICAR TEXTO, VER RESERVAS DE RESIDENTES, VER PQRC, RESPONDER PQRC,VER CARTERA TOTAL.
+    Autor: Maria Paula Carrero Rivas y Juan Fernando Escobar
+    Fecha creación: 15 de mayo 2018
+    Versión: 4
+ -->
+<html>
+<title>Administrador de la unidad</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../lib/w3.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+h2 {
+  color:black;
+  text-shadow: 2px 2px 4px grey;
+  margin: 0 auto;
+  display: block;
+  font-weight: bold;
+  font-size: 50px;
+  width: 100%;
+}
+</style>
+
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-light-grey w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a onclick="window.location.href='principal.html'"  class="w3-bar-item w3-button w3-padding-large w3-white">Principal</a>
+    <a onclick="window.location.href='login.html'"  class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Ingresar</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">FAQ</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Info</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a onclick="window.location.href='login.html'"  class="w3-bar-item w3-button w3-padding-large">Ingresar</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">FAQ</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Info</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-pale-green w3-center" style="padding:128px 10px">
+  <h2>OPCIONES</h2>
+ 
+  <!--<button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">INGRESAR</button> -->
+  <p>
+  <button onclick="window.location.href='publicarencuesta.html'"" type="button" class="w3-button w3-black w3-padding-large w3-large" style ="width:30%">PUBLICAR ENCUESTA</button></p>
+  <p>
+  <button onclick="window.location.href='publicartexto.html'"" type="button" class="w3-button w3-black w3-padding-large w3-large" style="width:30%">PUBLICAR TEXTO</button></p>
+  <p>
+  <button onclick="window.location.href='reservasview.php'"" type="button" class="w3-button w3-black w3-padding-large w3-large" style="width:30%">VER RESERVAS DE RESIDENTES</button></p>
+<p>
+  <button onclick="window.location.href='pqrcview.php'"" type="button" class="w3-button w3-black w3-padding-large w3-large" style="width:30%">VER PQRC</button></p>
+<p>
+  <button onclick="window.location.href='pqrcanswer.html'"" type="button" class="w3-button w3-black w3-padding-large w3-large" style="width:30%">RESPONDER PQRC</button></p>
+<p>
+  <button onclick="window.location.href='carteratotalview.php'"" type="button" class="w3-button w3-black w3-padding-large w3-large" style="width:30%">VER CARTERA TOTAL</button></p>
+ </p>
+
+</header>
+
+<!-- First Grid -->
+
+
+<!-- Second Grid -->
+<div class="w3-container w3-pale-green w3-center w3-padding-64">
+</div>
+<div class="w3-container w3-pale-green w3-center w3-padding-64">
+</div>
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
