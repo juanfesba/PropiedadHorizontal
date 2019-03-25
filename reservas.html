@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Descripcion: Este es el archivo de las reservas que importa los archivos necesarios para ejecutar el calendario. Para las funcionalidades de este archivo mas especifico se recominda mirar el archivo index.js -->
+<style>
+body,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+form {border: 3px solid #f1f1f1;}
+
+h1 {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 3px;
+  text-shadow: 2px 1px grey;
+  font-size:50px;
+  margin-bottom: 10px
+}
+
+button {
+    background-color: black;
+    color: white;
+    padding: 5px 5px; 
+    margin: 0 auto;
+    border: 4px;
+    margin-bottom:4px;
+    cursor: pointer;
+    display: block;
+    width: 10%;
+}
+.button1 {
+    background-color: black;
+    color: white;
+    padding: 5px 5px; 
+    margin: 0 auto;
+    border: 4px;
+    margin-bottom:4px;
+    cursor: pointer;
+    display: block;
+    width: 10%;
+    float: left;
+}
+.button2 {
+    background-color: black;
+    color: white;
+    padding: 5px 5px; 
+    margin: 0 auto;
+    border: 4px;
+    margin-left: 5px;
+    margin-bottom:4px;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    width: 12%;
+    float: left;
+}
+.button3 {
+    background-color: black;
+    color: white;
+    padding: 5px 5px; 
+    margin: 0 auto;
+    border: 4px;
+    margin-left: 5px;
+    margin-bottom:4px;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    width: 16%;
+    float: left;
+}
+button:hover {
+    opacity: 0.8;
+}
+.button1:hover {
+    opacity: 0.8;
+}
+.button2:hover {
+    opacity: 0.8;
+}
+</style>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Reservas</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css'>
+
+      <link rel="stylesheet" href="style.css">
+
+</head>
+<script>
+function url(){
+    var start=document.URL.length;
+    var user=document.URL.substring(45,start);
+    return user;
+}
+</script>
+<body>
+
+<!-- Navbar -->
+  <header class="w3-container w3-red w3-center" style="padding:50px 10px">
+  <h1 class="h1" src= "https://use.fontawesome.com/484df5253e.js" >Gestión de Reservas</h1>
+  <button class="button button1" type = button onclick="window.location.href='opciones.html?data='+url()" src= "https://use.fontawesome.com/484df5253e.js" >Menu Principal
+    <button class="button button2" type = button2 onclick="window.location.href='Listareservas.html?data='+url()" src= "https://use.fontawesome.com/484df5253e.js" >Lista de Reservas
+   <button class="button button3" type = button3 onclick="window.location.href='reservas.html?data='+url()" src= "https://use.fontawesome.com/484df5253e.js" >Refrescar la página
+</h1>
+
+</header>
+  <head>
+  <script src="https://use.fontawesome.com/484df5253e.js"></script>
+</head>
+<body>
+  <div id="app"></div>
+</body>
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://npmcdn.com/react@15.3.0/dist/react.min.js'></script>
+<script src='https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js'></script>
+
+    <script src="index.js"></script>
+
+<div class="w3-container w3-white w3-center" style="padding:128px 10px">    
+<p>
+  <button id = 'reserva' onclick="window.location.href='login.html'"" type="button" class="w3-button w3-black w3-padding-large w3-large" style ="display :none" style ="width:30%">RESERVAR</button></p>
+  <p>
+  <button id = 'lista' onclick="window.location.href='Listareservas.html?data='+url()" type="button" class="w3-button w3-black w3-padding-large w3-large" style ="display :none" style ="width:30%" >LISTA DE RESERVAS</button></p>
+<p>
+  <button id = 'refresh' onclick="window.location.href='reservas.html?data='+url()"  type="button" class="w3-button w3-black w3-padding-large w3-large" style ="display :none" style ="width:50%" >REFRESCAR LA PÁGINA</button></p>
+</div>
+</body>
+</html>
